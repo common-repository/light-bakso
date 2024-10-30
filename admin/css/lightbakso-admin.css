@@ -1,0 +1,16 @@
+/**
+ * All of the CSS for admin page
+ */
+
+#lightbakso_settings_form .custom_css td,
+#lightbakso_settings_form .custom_css th{
+	width: 20%;
+}
+
+@media all and (max-width: 1100px){
+	#lightbakso_settings_form .custom_css td,
+	#lightbakso_settings_form .custom_css th{
+		width: inherit;
+	}
+
+}

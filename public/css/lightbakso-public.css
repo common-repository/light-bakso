@@ -1,0 +1,13 @@
+/**
+ * All of the CSS for your public-facing functionality
+ *
+ */
+
+#lightbox_gallery .dashicons, #lightbox_gallery .dashicons-before:before {
+    display: block;
+}
+#lightbox_gallery.full_width {
+    width: 100vw;
+    position: relative;
+    margin-left: calc(-50vw + 50% - 8px);
+}

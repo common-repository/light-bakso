@@ -1,0 +1,186 @@
+/**
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+/* owl-carousel lightbox_gallery_carousel
+ *  Owl Carousel - Core
+ */
+.lightbox_gallery_carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1; }
+  .lightbox_gallery_carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden;
+    /* fix firefox animation glitch */ }
+  .lightbox_gallery_carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  .lightbox_gallery_carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px); }
+  .lightbox_gallery_carousel .owl-wrapper,
+  .lightbox_gallery_carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0); }
+  .lightbox_gallery_carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; }
+  .lightbox_gallery_carousel .owl-item img {
+    display: block;
+    width: 100%; }
+  .lightbox_gallery_carousel .owl-nav.disabled,
+  .lightbox_gallery_carousel .owl-dots.disabled {
+    display: none; }
+  .lightbox_gallery_carousel .owl-nav .owl-prev,
+  .lightbox_gallery_carousel .owl-nav .owl-next,
+  .lightbox_gallery_carousel .owl-dot {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .lightbox_gallery_carousel .owl-nav button.owl-prev,
+  .lightbox_gallery_carousel .owl-nav button.owl-next,
+  .lightbox_gallery_carousel button.owl-dot {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit; }
+  .lightbox_gallery_carousel.owl-loaded {
+    display: block; }
+  .lightbox_gallery_carousel.owl-loading {
+    opacity: 0;
+    display: block; }
+  .lightbox_gallery_carousel.owl-hidden {
+    opacity: 0; }
+  .lightbox_gallery_carousel.owl-refresh .owl-item {
+    visibility: hidden; }
+  .lightbox_gallery_carousel.owl-drag .owl-item {
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .lightbox_gallery_carousel.owl-grab {
+    cursor: move;
+    cursor: grab; }
+  .lightbox_gallery_carousel.owl-rtl {
+    direction: rtl; }
+  .lightbox_gallery_carousel.owl-rtl .owl-item {
+    float: right; }
+
+/* No Js */
+.no-js .lightbox_gallery_carousel {
+  display: block; }
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+.lightbox_gallery_carousel .animated {
+  animation-duration: 1000ms;
+  animation-fill-mode: both; }
+
+.lightbox_gallery_carousel .owl-animated-in {
+  z-index: 0; }
+
+.lightbox_gallery_carousel .owl-animated-out {
+  z-index: 1; }
+
+.lightbox_gallery_carousel .fadeOut {
+  animation-name: fadeOut; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+  transition: height 500ms ease-in-out; }
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+.lightbox_gallery_carousel .owl-item {
+  /**
+			This is introduced due to a bug in IE11 where lazy loading combined with autoheight plugin causes a wrong
+			calculation of the height of the owl-item that breaks page layouts
+		 */ }
+  .lightbox_gallery_carousel .owl-item .owl-lazy {
+    opacity: 0;
+    transition: opacity 400ms ease; }
+  .lightbox_gallery_carousel .owl-item .owl-lazy[src^=""], .lightbox_gallery_carousel .owl-item .owl-lazy:not([src]) {
+    max-height: 0; }
+  .lightbox_gallery_carousel .owl-item img.owl-lazy {
+    transform-style: preserve-3d; }
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+.lightbox_gallery_carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000; }
+
+.lightbox_gallery_carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url("owl.video.play.png") no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  transition: transform 100ms ease; }
+
+.lightbox_gallery_carousel .owl-video-play-icon:hover {
+  -ms-transform: scale(1.3, 1.3);
+      transform: scale(1.3, 1.3); }
+
+.lightbox_gallery_carousel .owl-video-playing .owl-video-tn,
+.lightbox_gallery_carousel .owl-video-playing .owl-video-play-icon {
+  display: none; }
+
+.lightbox_gallery_carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 400ms ease; }
+
+.lightbox_gallery_carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%; }
